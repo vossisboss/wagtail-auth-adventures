@@ -1430,7 +1430,7 @@
   }
 },
 {
-  "model": "auth.user",
+  "model": "users.user",
   "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$30000$eIoVnauBvLhA$aPWJSlHK+F/rW7SKunxJ/RnXNQHx0uh6K/kVRyPn0XY=",
