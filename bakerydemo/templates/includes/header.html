@@ -38,7 +38,7 @@
         </div>
         <div class="row">
             {% if request.user.is_authenticated %}
-                <h3 style="color:#ffffff;">Hello {{ request.user.username }}</h3>
+                <h3 style="color:#ffffff;">Hello {{ request.user.username }}</h3>, <a href="{% url 'logout' %}">Logout?</a>
             {% else %}
                 <a href="/_util/login"><button class="btn btn-primary">Log In </button></a>
             {% endif %}
