@@ -1,4 +1,4 @@
-Wagtail Bakery User Model Demo Project
+Wagtail Bakery Frontend Authentication Tutorial
 =======================
 
-This is a version of bakery with a custom User model baked in.
+This respository contains the code for a series of tutorials I'm writing on authentication for frontend users in Wagtail. Stay tuned!
