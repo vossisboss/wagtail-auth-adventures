@@ -187,3 +187,5 @@ WAGTAIL_SITE_NAME = "bakerydemo"
 AUTH_USER_MODEL = 'users.User'
 
 WAGTAIL_FRONTEND_LOGIN_TEMPLATE = 'users/login.html'
+
+LOGIN_REDIRECT_URL = '/'
