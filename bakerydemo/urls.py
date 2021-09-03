@@ -11,6 +11,8 @@ from wagtail.core import urls as wagtail_urls
 from bakerydemo.search import views as search_views
 from .api import api_router
 
+from users import views as user_views
+
 urlpatterns = [
     path('django-admin/', admin.site.urls),
 
@@ -23,6 +25,8 @@ urlpatterns = [
     path('api/v2/', api_router.urls),
     path('__debug__/', include(debug_toolbar.urls)),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('signup/', user_views.SignUpView, name='signup'),
 ]
 
 
