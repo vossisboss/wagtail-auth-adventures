@@ -1,17 +1,18 @@
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 from django.shortcuts import render, redirect
 
 def SignUpView(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('home')
+            new_user = form.save(commit = False)
+            new_user.set_password(
+                form.cleaned_data['password1'])
+            new_user.save()
+            return render(request,
+                          'users/signup_done.html',
+                          {'new_user': new_user})
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'users/signup.html', {'form': form})
